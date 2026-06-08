@@ -45,3 +45,18 @@ def dict_to_sorted(chars_dict):
 
     sort_list.sort(reverse=True, key=sort_on)
     return sort_list
+
+def sort_on(char: tuple[str, int]):
+    
+    return char[1]
+
+def chars_dict_to_sorted_list(chars_dict: dict[str, int]) -> list[tuple[str, int]]:
+
+    sorted_list = []
+
+    for char in chars_dict:
+        count = chars_dict[char]
+        sorted_list.append((char, count))
+
+    return sorted(sorted_list, key=sort_on, reverse=True)
+
